@@ -85,7 +85,7 @@ L'application se trouve dans `src/`
 
 Faire:
 
-    > git clone https://github.com/inf4533-2016/courriel.git
+    > git clone https://github.com/Bubblesphere/courriel.git
     > cd courriel/src
     > npm install
     > npm run build
