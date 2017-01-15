@@ -2,17 +2,45 @@ doctype html
 html
   head
     title Courriel
+    link(rel='stylesheet', href='/vendors/bootstrap/dist/css/bootstrap.min.css')
     link(rel='stylesheet', href='/css/style.css')
   body
-    div.header(id='header')
-      select(id="focus")
-        option(value="inbox") Inbox
-        option(value="write") New message
-        option(value="yp") Address Book
-    div.body(id='body')
-
-    script(src='/js/courriel.js')
-
-
-
-
+.container
+  .row
+    .app.col-xs-8.col-xs-offset-2
+      img.cover-image(src='https://goo.gl/jLLRTC')
+      img.avatar-image(src='https://goo.gl/SfGyUn')
+      .head
+        .row
+          h1.title.pull-left Inbox
+          h2.write.pull-right
+            span.fa.fa-pencil
+          h2.user-list.pull-right
+            span.fa.fa-users
+      .body
+        .message-container
+          .row
+            h3.title.pull-left No conflict
+            p.user.pull-right
+              small
+                span.fa.fa-user
+                |  Bruno Hamel
+            p.date.pull-right
+              small
+                span.fa.fa-clock-o
+                |  2d
+          p.message.clear-fix
+            | Sometimes it is necessary to use Bootstrap plugins with other UI frameworks. In these circumstances, namespace collisions can occasionally occur. If this happens, you may call .noConflict on the plugin you wish to revert the value of.
+        .message-container
+          .row
+            h3.title.pull-left Events
+            p.user.pull-right
+              small
+                span.fa.fa-user
+                |  Déric Dallaire
+            p.date.pull-right
+              small
+                span.fa.fa-clock-o
+                |  3d
+          p.message.clear-fix
+            | Bootstrap provides custom events for most plugins' unique actions. Generally, these come in an infinitive and past participle form - where the infinitive (ex. show) is triggered at the start of an event, and its past participle form (ex. shown) is triggered on the completion of an action.

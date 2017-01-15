@@ -1,4 +1,5 @@
 var express = require("express");
+var path = require('path');
 var body_parse  = require('body-parser');
 var json_file_object = require("json-file-object");
 var peers = require("./peers");
@@ -18,8 +19,17 @@ peers(etat, ["http://localhost:8889/etat"], 15);
 
 app.locals.pretty = true;
 
+app.use('/vendors', express.static(path.join(__dirname, 'public/vendors')));
+app.use('/img', express.static(path.join(__dirname, 'public/images')));
+app.use('/jss', express.static(path.join(__dirname, 'public/javascripts')));
+app.use('/css', express.static(path.join(__dirname, 'public/stylesheets')));
+
 app.get("/", function(req,res) {
     res.render("courriel.jade");
+});
+
+app.get("/archive", function(req,res) {
+    res.render("courrielArchive.jade");
 });
 
 app.post("/storeEncryptedKey", body_parse.json(), function(req,res) {
