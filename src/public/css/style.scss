@@ -5,15 +5,8 @@
 
 // CSS below will be categorized in a future push
 
-
-$cover-image-height: 150px;
-$avatar-image-height: 160px;
 .app {
-  min-height: $cover-image-height + ($avatar-image-height / 2) + 20;
-  padding: 0px;
-  border-radius: 2px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  background: white;
+    min-height: $cover-image-height + ($avatar-image-height / 2) + 20;
   .cover-image {
     height: $cover-image-height;
     width: 100%;
