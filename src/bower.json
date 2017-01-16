@@ -1,18 +1,18 @@
 {
-  "name": "uqo",
-  "description": "Projet courriel dans le cadre du cours Technologies Internet 2016",
-  "main": "index.js",
+  "name": "courriel",
+  "homepage": "https://github.com/Bubblesphere/courriel",
   "authors": [
-    "Déric Dallaire",
+    "Deric Dallaire",
     "Bruno Hamel"
   ],
+  "description": "Projet TI",
+  "main": "",
   "license": "MIT",
-  "homepage": "https://github.com/Bubblesphere/courriel",
-  "private": true,
   "ignore": [
     "**/.*",
     "node_modules",
     "bower_components",
+    "public/vendors",
     "test",
     "tests"
   ]
