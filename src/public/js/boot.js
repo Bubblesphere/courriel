@@ -31,6 +31,9 @@ routes.add(new Route({
     model: outbox
 }));
 
+
+
+
 var user1 = new User({
     name: "Bruno Hamel"
 });
