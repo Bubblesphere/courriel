@@ -25,7 +25,9 @@ app.use('/jss', express.static(path.join(__dirname, 'public/javascripts')));
 app.use('/css', express.static(path.join(__dirname, 'public/stylesheets')));
 
 app.get("/", function (req, res) {
-    res.render("courriel.jade");
+    res.render("courriel.jade", {
+        title: "Courriel"
+    });
 });
 
 app.get("/archive", function (req, res) {
@@ -33,7 +35,9 @@ app.get("/archive", function (req, res) {
 });
 
 app.get("/test", function (req, res) {
-    res.render("test.jade");
+    res.render("test.jade", {
+        title: "Testing"
+    });
 });
 
 app.post("/storeEncryptedKey", body_parse.json(), function (req, res) {

@@ -6,7 +6,7 @@ users.add(newUser);
 console.log('allo', users.items);
 
 newUser.name = "a name";
-users.editUser(newUser);
+users.edit(newUser);
 console.log(users.items)
 
 
@@ -20,4 +20,8 @@ users.add(otherUser);
 
 
 console.log("test getById", users.getById("lkjdsalfj"));
+
+users.delete(otherUser);
+
+console.log("test delete", users);
 
