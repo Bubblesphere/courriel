@@ -11,6 +11,20 @@ body {
   margin-top: 50px;
   margin-bottom: 50px; }
 
+::-webkit-scrollbar {
+  width: 0.5em;
+  height: 0.5em; }
+
+::-webkit-scrollbar-thumb {
+  background: slategray; }
+
+::-webkit-scrollbar-track {
+  background: #b7bfc7; }
+
+body {
+  scrollbar-face-color: slategray;
+  scrollbar-track-color: #b7bfc7; }
+
 .app {
   min-height: 250px; }
   .app .cover-image {
@@ -46,23 +60,27 @@ body {
       .app .head .row .write:hover {
         color: #2980b9; }
   .app .body {
+    height: calc(100vh - 150px - 100px - 100px);
+    overflow-y: auto;
     padding-left: 20px;
     padding-right: 20px; }
-    .app .body .message-container {
+    .app .body .new-message-container textarea.message {
+      margin-top: 20px; }
+    .app .body .inbox-container {
       padding-top: 15px;
       padding-bottom: 30px;
       border-top: 1px solid #ddd; }
-      .app .body .message-container .row {
+      .app .body .inbox-container .row {
         padding-left: 15px;
         padding-right: 15px; }
-      .app .body .message-container .title {
+      .app .body .inbox-container .title {
         margin-top: 0px; }
-      .app .body .message-container .user {
+      .app .body .inbox-container .user {
         color: #777; }
-      .app .body .message-container .date {
+      .app .body .inbox-container .date {
         color: #777;
         padding-right: 10px; }
-      .app .body .message-container .message {
+      .app .body .inbox-container .message {
         border-left: 3px solid rgba(41, 128, 185, 0.4);
         padding-left: 10px; }
 
