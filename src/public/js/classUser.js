@@ -1,5 +1,9 @@
-function User (user) {
+function User (user) { 
+    var guid = new Guid();
     this.objectType = "user",
-    this.id = user.id,
-    this.name = user.name
+    this.id = guid.create(),
+    this.name = user.name,
+    this.update = function(newUser){
+        this.name = newUser.name;
+    }
 }

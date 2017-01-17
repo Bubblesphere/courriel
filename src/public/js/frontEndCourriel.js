@@ -1,2 +1,3 @@
 var users = new UserList();
-var messageBox = new MessageBox();
+var inbox = new MessageBox();
+var outbox = new MessageBox();

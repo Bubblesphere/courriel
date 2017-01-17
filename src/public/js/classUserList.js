@@ -1,19 +1,21 @@
 function UserList() {
-    this.users = [],
+    this.items = [],
         this.size = function () {
-            return this.users.length;
+            return this.items.length;
         },
-        this.addUser = function (user) {
-            this.users.push(user);
+        this.add = function (user) {
+            this.items.push(user);
         },
-        this.getUserById = function (id) {
-            for (var i = 0; i < this.users.length; i++) {
-                if (this.users[i].id == id) {
-                    return this.users[i];
-                }
-            }
-            return null;
+        this.getById = function (id) {
+            var user = this.items.find(function(currentUser){
+                return currentUser.id == id;
+            });
+            return user;
+        },
+        this.deleteById = function (id) {
+            
+        },
+        this.editUser = function (newUser) {
+            this.getById(newUser.id).update(newUser);
         }
-    // modify
-    // delete
 };
