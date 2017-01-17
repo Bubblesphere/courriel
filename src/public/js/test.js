@@ -5,7 +5,11 @@ var newUser = new User({
 users.add(newUser);
 console.log('allo', users.items);
 
+<<<<<<< HEAD
+newUser.name = "a name";
+=======
 newUser.name = "a name3";
+>>>>>>> 52840ee4892637bf6c29e0cb9c175aaac0bfa359
 users.edit(newUser);
 console.log(users.items)
 
