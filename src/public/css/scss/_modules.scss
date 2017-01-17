@@ -40,9 +40,17 @@
         color: $color-brand;
       }
       .write {
+        
+        margin-right: 20px;
         transition: all 0.2s ease;
       }
       .write:hover {
+        color: $color-brand;
+      }
+      .mail {
+        transition: all 0.2s ease;
+      }
+      .mail:hover {
         color: $color-brand;
       }
     }

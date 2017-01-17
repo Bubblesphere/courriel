@@ -32,6 +32,7 @@ textarea {
 input.btn-custom {
   margin-top: 20px;
   margin-left: 20px;
+  padding: 10px;
   background-color: #2980b9;
   color: white;
   font-weight: bold;
@@ -80,8 +81,13 @@ input.btn-custom:active {
       .app .head .row .user-list:hover {
         color: #2980b9; }
       .app .head .row .write {
+        margin-right: 20px;
         transition: all 0.2s ease; }
       .app .head .row .write:hover {
+        color: #2980b9; }
+      .app .head .row .mail {
+        transition: all 0.2s ease; }
+      .app .head .row .mail:hover {
         color: #2980b9; }
   .app .body {
     height: calc(100vh - 150px - 100px - 100px);
