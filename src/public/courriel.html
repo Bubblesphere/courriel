@@ -14,48 +14,11 @@
     <div class="container">
         <div class="row">
             <div class="app col-xs-8 col-xs-offset-2"><img class="cover-image" src="https://goo.gl/jLLRTC" /><img class="avatar-image" src="/img/photo.jpg" />
-                <div class="head">
-                    <div class="row">
-                        <h1 class="title pull-left">Inbox</h1>
-                        <h2 class="mail pull-right"><span class="fa fa-envelope"></span></h2>
-                        <h2 class="write pull-right"><span class="fa fa-pencil"></span></h2>
-                        <h2 class="user-list pull-right"><span class="fa fa-users"></span></h2>
-                    </div>
+                <div class="head" id="head-container">
+                    
                 </div>
-                <div class="body">
+                <div class="body" id="template-container">
 
-                    <script id="new-message-template" type="text/x-handlebars-template">
-                        {{! Pass a userList object to this template }}
-                        <select class="form-control user-list">
-                            {{#each items}}
-                            <option value="{{id}}">{{ name }}</option>
-                            {{/each}}
-                        </select>
-                        <textarea class="form-control message" rows="8"></textarea>
-                        <input class="btn btn-custom pull-right" value="Annuler" type="button" />
-                        <input class="btn btn-custom pull-right" value="Envoyer" type="button" />
-                    </script>
-
-                    <script id="inbox-template" type="text/x-handlebars-template">
-                        {{! Pass a MessageBox object to this template }}
-                        {{#each items}}
-                        <div class="row">
-                            <h3 class="title pull-left">Title</h3>
-                            <p class="user pull-right"><small><span class="fa fa-user"></span> {{ from }}</small></p>
-                            <p class="date pull-right"><small><span class="fa fa-clock-o"></span> {{ receptionDate.formattedDate }}</small></p>
-                        </div>
-                        <p class="message clear-fix">{{ content }}</p>
-                        {{/each}}
-                    </script>
-
-                    <script id="entry-template" type="text/x-handlebars-template">
-                    <div class="entry">
-                        <h1>{{title}}</h1>
-                        <div class="body">
-                        {{body}}
-                        </div>
-                    </div>
-                    </script>
                 </div>
             </div>
         </div>
@@ -63,15 +26,97 @@
     
     <script src="/vendors/jquery/dist/jquery.min.js"></script>
     <script src="/vendors/handlebars/handlebars.js"></script>
-    
-    <script src="/js/class.guid.js"></script>
+
+    <script id="head-template" type="text/x-handlebars-template">
+        <div class="row">
+            <h1 class="title pull-left">{{ pageTitle }}</h1>
+            <h2 class="icon-link inbox-link pull-right"><span class="fa fa-inbox"></span></h2>
+            <h2 class="icon-link outbox-link pull-right"><span class="fa fa-envelope"></span></h2>
+            <h2 class="icon-link new-message-link pull-right"><span class="fa fa-pencil"></span></h2>
+            <h2 class="icon-link user-list-link pull-right"><span class="fa fa-users"></span></h2>
+        </div>
+        <script src="/js/listeners-head.js"></script>
+    </script>
+
+    <script id="new-message-template" type="text/x-handlebars-template">
+        <div class="new-message-template">
+            <select class="form-control user-list">
+                {{#each items}}
+                <option value="{{id}}">{{ name }}</option>
+                {{/each}}
+            </select>
+            <textarea class="form-control message" rows="8"></textarea>
+            <input class="cancel btn btn-custom pull-right" value="Annuler" type="button" />
+            <input class="send btn btn-custom pull-right" value="Envoyer" type="button" />
+        </div>
+        <script src="/js/listeners-new-message.js"></script>
+    </script>
+
+    <script id="inbox-template" type="text/x-handlebars-template">
+        <div class="inbox-template">
+            {{! Pass a MessageBox object to this template }}
+            {{#each items}}
+            <div class="inbox-group">
+                <div class="row">
+                    <h3 class="title pull-left">{{ title }}</h3>
+                    <p class="user pull-right"><small><span class="fa fa-user"></span> {{ from.name }}</small></p>
+                    <p class="date pull-right"><small><span class="fa fa-clock-o"></span> {{ receptionDate.formattedDate }}</small></p>
+                </div>
+                <p class="message clear-fix">{{ content }}</p>
+            </div>
+            {{/each}}  
+        </div>
+    </script>
+
+    <script id="outbox-template" type="text/x-handlebars-template">
+        <div class="outbox-template">
+            {{! Pass a MessageBox object to this template }}
+            {{#each items}}
+            <div class="outbox-group">
+                <div class="row">
+                    <h3 class="title pull-left">{{ title }}</h3>
+                    <p class="user pull-right"><small><span class="fa fa-user"></span> {{ from.name }}</small></p>
+                    <p class="date pull-right"><small><span class="fa fa-clock-o"></span> {{ receptionDate.formattedDate }}</small></p>
+                </div>
+                <p class="message clear-fix">{{ content }}</p>
+            </div>
+            {{/each}}  
+        </div>
+    </script>
+
+    <script id="user-list-template" type="text/x-handlebars-template">
+        <div class="user-list-template">
+            <input type="hidden" class="id"/>
+            <div class="row">
+                <div class="col-md-12">
+                    <input type="text" class="name form-control" placeholder="Ajouter un contact"/>
+                    <input type="button" class="add-edit btn btn-custom pull-right" value="Ajouter">
+                </div> 
+            </div>
+            {{#each items}}
+            <div class="user-list-group">
+                <div class="row">
+                    <h4 class="title pull-left">{{ name }}</h4>
+                    <input type="button" class="delete btn btn-custom pull-right" value="Supprimer"> 
+                    <input type="button" class="edit btn btn-custom pull-right" value="Modifier"> 
+                </div>
+            </div>
+            {{/each}}  
+        </div>
+        <script src="/js/listeners-user-list.js"></script>
+    </script>
+
+    <script src="/js/guid.js"></script>
     <script src="/js/prototype.js"></script>
-    <script src="/js/class.date-utility.js"></script>
-    <script src="/js/class.user.js"></script>
-    <script src="/js/class.user-list.js"></script>
-    <script src="/js/class.message.js"></script>
-    <script src="/js/class.message-box.js"></script>
-    <script src="/js/front-end-courriel.js"></script>
+    <script src="/js/date-utility.js"></script>
+    <script src="/js/user.js"></script>
+    <script src="/js/user-list.js"></script>
+    <script src="/js/message.js"></script>
+    <script src="/js/message-box.js"></script>
+    <script src="/js/route.js"></script>
+    <script src="/js/route-list.js"></script>
+    <script src="/js/route-list.js"></script>
+    <script src="/js/boot.js"></script>
 </body>
 
 </html>

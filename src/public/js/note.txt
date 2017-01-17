@@ -1,4 +1,0 @@
-The *.js files in this directory are generated from files "client/*.js"
-using browserify, which can be run by:
-
- > npm run build

@@ -30,7 +30,6 @@ textarea {
   resize: vertical; }
 
 input.btn-custom {
-  margin-top: 20px;
   margin-left: 20px;
   padding: 10px;
   background-color: #2980b9;
@@ -48,7 +47,8 @@ input.btn-custom:hover {
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); }
 
 input.btn-custom:active {
-  box-shadow: none; }
+  box-shadow: none;
+  color: white; }
 
 .app {
   min-height: 250px; }
@@ -75,43 +75,45 @@ input.btn-custom:active {
       padding-right: 15px; }
       .app .head .row .title {
         font-weight: bold; }
-      .app .head .row .user-list {
-        margin-right: 20px;
-        transition: all 0.2s ease; }
-      .app .head .row .user-list:hover {
+      .app .head .row .icon-link {
+        transition: all 0.2s ease;
+        cursor: pointer; }
+      .app .head .row .icon-link:hover {
         color: #2980b9; }
-      .app .head .row .write {
-        margin-right: 20px;
-        transition: all 0.2s ease; }
-      .app .head .row .write:hover {
-        color: #2980b9; }
-      .app .head .row .mail {
-        transition: all 0.2s ease; }
-      .app .head .row .mail:hover {
-        color: #2980b9; }
+      .app .head .row .outbox-link {
+        margin-right: 20px; }
+      .app .head .row .user-list-link {
+        margin-right: 20px; }
+      .app .head .row .new-message-link {
+        margin-right: 20px; }
   .app .body {
     height: calc(100vh - 150px - 100px - 100px);
     overflow-y: auto;
     padding-left: 20px;
     padding-right: 20px; }
-    .app .body .new-message-container textarea.message {
+    .app .body .add-edit {
+      margin-top: 20px;
+      margin-bottom: 20px; }
+    .app .body .new-message-template textarea.message {
       margin-top: 20px; }
-    .app .body .inbox-container {
+    .app .body .new-message-template input.btn-custom {
+      margin-top: 20px; }
+    .app .body div[class*="-group"] {
       padding-top: 15px;
       padding-bottom: 30px;
       border-top: 1px solid #ddd; }
-      .app .body .inbox-container .row {
+      .app .body div[class*="-group"] .row {
         padding-left: 15px;
         padding-right: 15px; }
-      .app .body .inbox-container .title {
+      .app .body div[class*="-group"] .title, .app .body div[class*="-group"] h3 {
         margin-top: 0px; }
-      .app .body .inbox-container .user {
-        color: #777; }
-      .app .body .inbox-container .date {
-        color: #777;
-        padding-right: 10px; }
-      .app .body .inbox-container .message {
-        border-left: 3px solid rgba(41, 128, 185, 0.4);
-        padding-left: 10px; }
+    .app .body .inbox-group .user, .app .body .outbox-group .user {
+      color: #777; }
+    .app .body .inbox-group .date, .app .body .outbox-group .date {
+      color: #777;
+      padding-right: 10px; }
+    .app .body .inbox-group .message, .app .body .outbox-group .message {
+      border-left: 3px solid rgba(41, 128, 185, 0.4);
+      padding-left: 10px; }
 
 /*# sourceMappingURL=style.css.map */

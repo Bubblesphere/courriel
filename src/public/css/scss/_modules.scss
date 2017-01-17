@@ -32,26 +32,21 @@
       .title {
         font-weight: bold;
       }
-      .user-list {
+      .icon-link {
+        transition: all 0.2s ease;
+        cursor: pointer;
+      }
+      .icon-link:hover {
+        color: $color-brand;
+      }
+      .outbox-link {
         margin-right: 20px;
-        transition: all 0.2s ease;
       }
-      .user-list:hover {
-        color: $color-brand;
-      }
-      .write {
-        
+      .user-list-link {
         margin-right: 20px;
-        transition: all 0.2s ease;
       }
-      .write:hover {
-        color: $color-brand;
-      }
-      .mail {
-        transition: all 0.2s ease;
-      }
-      .mail:hover {
-        color: $color-brand;
+      .new-message-link {
+        margin-right: 20px;
       }
     }
   }
@@ -60,15 +55,23 @@
     overflow-y: auto;
     padding-left: 20px;
     padding-right: 20px;
-    .new-message-container {
+    .add-edit {
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+
+    .new-message-template {
         select.user-list {
 
         }
         textarea.message {
             margin-top: 20px;
         }
+        input.btn-custom {
+          margin-top: 20px;
+        }
     }
-    .inbox-container {
+    div[class*="-group"] {
       padding-top: 15px;
       padding-bottom: 30px;
       border-top: 1px solid $color-separation;
@@ -76,9 +79,12 @@
         padding-left: 15px;
         padding-right: 15px;
       }
-      .title {
+      .title, h3 {
         margin-top: 0px;
       }
+    }
+    .inbox-group, .outbox-group {
+      
       .user {
         color: $color-text-lightest;
       }

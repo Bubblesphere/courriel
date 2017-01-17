@@ -32,7 +32,6 @@ textarea {
 }
 
 input.btn-custom {
-    margin-top: 20px;
     margin-left: 20px;
     padding: 10px;
     background-color: rgba($color-brand,1);
@@ -53,4 +52,5 @@ input.btn-custom:hover {
 
 input.btn-custom:active {
     box-shadow: none;
+     color: white;
 }
