@@ -2,3 +2,86 @@
 // This file contains all application-wide Sass modules
 // such as Inbox, Outbox, User list
 // -----------------------------------------------------------------------------
+
+
+.app {
+    min-height: $cover-image-height + ($avatar-image-height / 2) + 20;
+  .cover-image {
+    height: $cover-image-height;
+    width: 100%;
+  }
+  .avatar-image {
+    width: $avatar-image-height;
+    height: $avatar-image-height;
+    border-radius: $avatar-image-height / 2;
+    border: 8px solid $color-foreground;
+    position: absolute;
+    top: $cover-image-height / 2;
+    right: calc(50% - #{ $avatar-image-height / 2 });
+  }
+  .head {
+    overflow: none;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-transform: uppercase;
+    height: $avatar-image-height / 2 + 20;
+    color: $color-text-light;
+    .row {
+      padding-left: 15px;
+      padding-right: 15px;
+      .title {
+        font-weight: bold;
+      }
+      .user-list {
+        margin-right: 20px;
+        transition: all 0.2s ease;
+      }
+      .user-list:hover {
+        color: $color-brand;
+      }
+      .write {
+        transition: all 0.2s ease;
+      }
+      .write:hover {
+        color: $color-brand;
+      }
+    }
+  }
+  .body {
+    height: calc(100vh - #{$cover-image-height} - #{$avatar-image-height / 2 + 20} - 100px);
+    overflow-y: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    .new-message-container {
+        select.user-list {
+
+        }
+        textarea.message {
+            margin-top: 20px;
+        }
+    }
+    .inbox-container {
+      padding-top: 15px;
+      padding-bottom: 30px;
+      border-top: 1px solid $color-separation;
+      .row {
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+      .title {
+        margin-top: 0px;
+      }
+      .user {
+        color: $color-text-lightest;
+      }
+      .date {
+        color: $color-text-lightest;
+        padding-right: 10px;
+      }
+      .message {
+        border-left: 3px solid rgba($color-brand, 0.4);
+        padding-left: 10px;
+      }
+    }
+  }
+}

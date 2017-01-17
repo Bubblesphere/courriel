@@ -14,31 +14,26 @@ block content
             h2.user-list.pull-right
               span.fa.fa-users
         .body
-          .message-container
-            .row
-              h3.title.pull-left No conflict
-              p.user.pull-right
-                small
-                  span.fa.fa-user
-                  |  Bruno Hamel
-              p.date.pull-right
-                small
-                  span.fa.fa-clock-o
-                  |  2d
-            p.message.clear-fix
-              | Sometimes it is necessary to use Bootstrap plugins with other UI frameworks. In these circumstances, namespace collisions can occasionally occur. If this happens, you may call .noConflict on the plugin you wish to revert the value of.
-          .message-container
-            .row
-              h3.title.pull-left Events
-              p.user.pull-right
-                small
-                  span.fa.fa-user
-                  |  Déric Dallaire
-              p.date.pull-right
-                small
-                  span.fa.fa-clock-o
-                  |  3d
-            p.message.clear-fix
-              | Bootstrap provides custom events for most plugins' unique actions. Generally, these come in an infinitive and past participle form - where the infinitive (ex. show) is triggered at the start of an event, and its past participle form (ex. shown) is triggered on the completion of an action.
+          .new-message-container
+            select.form-control.input-lg.user-list()
+              option(value=1) Contact 1
+              option(value=2) Contact 2
+              option(value=3) Contact 3
+            textarea.form-control.input-lg.message(rows=5)
+
+          - for (var i=0; i<0; i++)
+            .inbox-container
+              .row
+                h3.title.pull-left Title
+                p.user.pull-right
+                  small
+                    span.fa.fa-user
+                    |  Bruno Hamel
+                p.date.pull-right
+                  small
+                    span.fa.fa-clock-o
+                    |  2d
+              p.message.clear-fix
+                | Sometimes it is necessary to use Bootstrap plugins with other UI frameworks. In these circumstances, namespace collisions can occasionally occur. If this happens, you may call .noConflict on the plugin you wish to revert the value of.
 block extendScript
   script(src="/js/frontEndCourriel.js")

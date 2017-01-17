@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <title>Courriel</title>
+    <link rel="stylesheet" href="../vendors/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" 
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+   
+    <div class="container">
+        <div class="row">
+            <div class="app col-xs-8 col-xs-offset-2"><img class="cover-image" src="https://goo.gl/jLLRTC" /><img class="avatar-image" src="/img/photo.jpg" />
+                <div class="head">
+                    <div class="row">
+                        <h1 class="title pull-left">Inbox</h1>
+                        <h2 class="write pull-right"><span class="fa fa-pencil"></span></h2>
+                        <h2 class="user-list pull-right"><span class="fa fa-users"></span></h2>
+                    </div>
+                </div>
+                <div class="body">
+
+                    <script id="new-message-template" type="text/x-handlebars-template">
+                        {{! Pass a userList object to this template }}
+                        <select class="form-control input-lg user-list">
+                            {{#each items}}
+                            <option value="{{id}}">{{ name }}</option>
+                            {{/each}}
+                        </select>
+                        <textarea class="form-control input-lg message" rows="5"></textarea>
+                        <input class="btn btn-default" value="test" type="button" />
+                    </script>
+
+                    <script id="inbox-template" type="text/x-handlebars-template">
+                        {{! Pass a MessageBox object to this template }}
+                        {{#each items}}
+                        <div class="row">
+                            <h3 class="title pull-left">Title</h3>
+                            <p class="user pull-right"><small><span class="fa fa-user"></span> {{ from }}</small></p>
+                            <p class="date pull-right"><small><span class="fa fa-clock-o"></span> {{ receptionDate.formattedDate }}</small></p>
+                        </div>
+                        <p class="message clear-fix">{{ content }}</p>
+                        {{/each}}
+                    </script>
+
+                    <script id="entry-template" type="text/x-handlebars-template">
+                    <div class="entry">
+                        <h1>{{title}}</h1>
+                        <div class="body">
+                        {{body}}
+                        </div>
+                    </div>
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="/vendors/jquery/dist/jquery.min.js"></script>
+    <script src="/vendors/handlebars/handlebars.js"></script>
+    <script src="/js/prototype.js"></script>
+    <script src="/js/class.date-utility.js"></script>
+    <script src="/js/class.user.js"></script>
+    <script src="/js/class.user-list.js"></script>
+    <script src="/js/class.message.js"></script>
+    <script src="/js/class.message-box.js"></script>
+    <script src="/js/front-end-courriel.js"></script>
+    <script src="/js/addons.handlebars.js"></script>
+</body>
+
+</html>
