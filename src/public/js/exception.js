@@ -1,4 +1,4 @@
 function Exception(error){
-    this.type = error.type;
+    this.isError = error.isError;
     this.text = error.text;
 }

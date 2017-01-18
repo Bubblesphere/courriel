@@ -10,7 +10,7 @@ $("div.user-list-template input.delete").on("click", function () {
 
 $("div.user-list-template input.add-edit").on("click", function () {
     var userName = $(".user-list-template .name").val()
-    var newUser = new User({
+    var newUser = UserFactory({
         name: userName
     });
     users.add(newUser);

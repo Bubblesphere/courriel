@@ -6,6 +6,7 @@ var routes = new RouteList({
 var users = new UserList();
 var inbox = new MessageBox();
 var outbox = new MessageBox();
+var exceptionHandler = new ExceptionHandler();
 
 routes.add(new Route({
     id: "new-message",
@@ -31,10 +32,10 @@ routes.add(new Route({
     model: outbox
 }));
 
-var user1 = new User({
+var user1 = UserFactory({
     name: "Bruno Hamel"
 });
-var user2 = new User({
+var user2 = UserFactory({
     name: "Deric Dallaire"
 });
 users.add(user1, user2);

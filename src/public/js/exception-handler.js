@@ -5,7 +5,7 @@ function ExceptionHandler(){
     },
     this.log = function(){
         this.list.forEach(function(exception){
-            if(exception.type == 1)
+            if(exception.isError === true)
                 console.error(exception.text);
             else
                 console.warn(exception.text);
