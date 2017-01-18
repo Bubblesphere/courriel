@@ -4,6 +4,7 @@ $("div.new-message-template input.cancel").on("click", function() {
 });
 
 $("div.new-message-template input.send").on("click", function() {
-    console.log("Send");
+
+    console.log(this);
     routes.goTo("new-message");
 });

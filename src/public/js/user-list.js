@@ -6,16 +6,51 @@ function UserList() {
         this.add = function () {
             arguments = Array.from(arguments);
             var classScope = this;
+            var exceptionHandler = new ExceptionHandler();
+
             arguments.forEach(function (user) {
-                if (classScope.existsByName(user.name)) {
-                    console.error("User exists with the name " + user.name);
-                } else {
-                    classScope.items.push(user);
+
+                if (typeof user == "undefined") {
+                    var exception = new Exception({
+                        type: 1,
+                        text: "No user object was supplied"
+                    });
+                    exceptionHandler.add(exception);
                 }
+                if (user.name == "") {
+                    var exception = new Exception({
+                        type: 1,
+                        text: "This user has no name"
+                    });
+                    exceptionHandler.add(exception);
+                }
+                if (typeof user != "object") {
+                    var exception = new Exception({
+                        type: 1,
+                        text: "The argument supplied is not an object"
+                    });
+                    exceptionHandler.add(exception);
+                }
+                if (classScope.existsByName(user.name)) {
+                    var exception = new Exception({
+                        type: 1,
+                        text: "A user with the name " + user.name + " exists already in the list of users."
+                    });
+                    exceptionHandler.add(exception);
+                }             
+
+                if (exceptionHandler.list.length == 0) 
+                    classScope.items.push(user);
+                
             });
+            exceptionHandler.log();
         },
         this.existsByName = function (name) {
             var existingUser = this.getByName(name);
+            return !!existingUser;
+        },
+        this.existsById = function (id) {
+            var existingUser = this.getById(id);
             return !!existingUser;
         },
         this.getByName = function (name) {

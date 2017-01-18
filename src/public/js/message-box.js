@@ -4,6 +4,7 @@ function MessageBox() {
             return this.items.length;
         },
         this.addMessage = function (message) {
+            console.log(users);            
             this.items.push(message);
         }
 };
