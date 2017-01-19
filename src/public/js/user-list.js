@@ -54,5 +54,4 @@ function UserList() {
     this.edit = function (newUser) {
         this.getById(newUser.id).update(newUser);
     }
-
 };

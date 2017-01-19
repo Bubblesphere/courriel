@@ -1,8 +1,10 @@
 function ExceptionHandler(){
     this.list = [];
+
     this.add = function(exception){
         this.list.push(exception);
-    },
+    }
+
     this.log = function(){
         this.list.forEach(function(exception){
             if(exception.isError === true)
@@ -13,4 +15,6 @@ function ExceptionHandler(){
         });        
         this.list = [];
     }
+
+    
 }

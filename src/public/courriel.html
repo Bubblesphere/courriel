@@ -44,7 +44,8 @@
                 {{#each items}}
                 <option value="{{id}}">{{ name }}</option>
                 {{/each}}
-            </select>
+            </select>            
+            <input class="form-control title" type="text" placeholder="Titre" />
             <textarea class="form-control message" rows="8"></textarea>
             <input class="cancel btn btn-custom pull-right" value="Annuler" type="button" />
             <input class="send btn btn-custom pull-right" value="Envoyer" type="button" />
@@ -114,6 +115,7 @@
     <script src="/js/user-factory.js"></script>
     <script src="/js/user.js"></script>
     <script src="/js/user-list.js"></script>
+    <script src="/js/message-factory.js"></script>
     <script src="/js/message.js"></script>
     <script src="/js/message-box.js"></script>
     <script src="/js/route.js"></script>

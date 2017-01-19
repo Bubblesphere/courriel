@@ -3,8 +3,7 @@ function MessageBox() {
         this.size = function () {
             return this.items.length;
         },
-        this.addMessage = function (message) {
-            console.log(users);            
+        this.addMessage = function (message) {            
             this.items.push(message);
         }
 };
